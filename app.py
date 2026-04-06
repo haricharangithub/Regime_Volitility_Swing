@@ -162,31 +162,10 @@ elif page == "📈 Prediction":
                 past_7_days = data["return"].tail(7).sum()
 
                 # ---------------- RETURNS ---------------- #
-                # #weekly_return = float(data['Close'].pct_change(5).iloc[-1])
-                # if 'Close' in data.columns and len(data) > 5:
-                #     weekly_return = data['Close'].pct_change(5).iloc[-1]
-                #     weekly_return = float(weekly_return) if not pd.isna(weekly_return) else 0
-                # else:
-                #     weekly_return = 0
-                #     monthly_return = float(data['Close'].pct_change(21).iloc[-1])
-                #     quarterly_return = float(data['Close'].pct_change(63).iloc[-1])
-
-
-                # ---------------- RETURNS ---------------- #
-                try:
-                    weekly_return = float(data['Close'].pct_change(5).iloc[-1])
-                except:
-                    weekly_return = 0
-
-                try:
-                    monthly_return = float(data['Close'].pct_change(21).iloc[-1])
-                except:
-                    monthly_return = 0
-
-                try:
-                    quarterly_return = float(data['Close'].pct_change(63).iloc[-1])
-                except:
-                    quarterly_return = 0
+                weekly_return = float(data['Close'].pct_change(5).iloc[-1])
+                monthly_return = float(data['Close'].pct_change(21).iloc[-1])
+                quarterly_return = float(data['Close'].pct_change(63).iloc[-1])
+                
 
                 # ================= CLEAN FEATURES ================= #
                 raw_features = [
