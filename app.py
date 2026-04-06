@@ -162,9 +162,31 @@ elif page == "📈 Prediction":
                 past_7_days = data["return"].tail(7).sum()
 
                 # ---------------- RETURNS ---------------- #
-                weekly_return = float(data['Close'].pct_change(5).iloc[-1])
-                monthly_return = float(data['Close'].pct_change(21).iloc[-1])
-                quarterly_return = float(data['Close'].pct_change(63).iloc[-1])
+                # #weekly_return = float(data['Close'].pct_change(5).iloc[-1])
+                # if 'Close' in data.columns and len(data) > 5:
+                #     weekly_return = data['Close'].pct_change(5).iloc[-1]
+                #     weekly_return = float(weekly_return) if not pd.isna(weekly_return) else 0
+                # else:
+                #     weekly_return = 0
+                #     monthly_return = float(data['Close'].pct_change(21).iloc[-1])
+                #     quarterly_return = float(data['Close'].pct_change(63).iloc[-1])
+
+
+                if 'Close' in data.columns and len(data) > 63:
+
+                    weekly_return = data['Close'].pct_change(5).iloc[-1]
+                    weekly_return = float(weekly_return) if not pd.isna(weekly_return) else 0
+
+                    monthly_return = data['Close'].pct_change(21).iloc[-1]
+                    monthly_return = float(monthly_return) if not pd.isna(monthly_return) else 0
+
+                    quarterly_return = data['Close'].pct_change(63).iloc[-1]
+                    quarterly_return = float(quarterly_return) if not pd.isna(quarterly_return) else 0
+
+                else:
+                    weekly_return = 0
+                    monthly_return = 0
+                    quarterly_return = 0
 
                 # ================= CLEAN FEATURES ================= #
                 raw_features = [
@@ -246,7 +268,7 @@ elif page == "📈 Prediction":
                     st.metric("High Price", f"{float(high):<20.2f}")
 
                 with col2:
-                    st.metric("current Price", f"{float(low):<20.2f}")
+                    st.metric("current Price", f"{float(low):<20}")
                     st.metric("Volume", f"{int(volume):<20,}")
                     st.metric("Daily Return", f"{daily_return:<20.5f}")
                     st.metric("Volatility (5D)", f"{volatility_5d:<20.5f}")
