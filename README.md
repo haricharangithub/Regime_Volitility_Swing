@@ -68,22 +68,22 @@ The model classifies market conditions into:
 - Streamlit  
 - Yahoo Finance API  
 
----
+--
 
 ## 💡 Use Cases
 - Helps investors understand market risk  
 - Supports smarter investment decisions  
 - Reduces risk during volatile conditions  
 
----
+--
 
 ## 🚀 Future Enhancements
 - Real-time stock data integration  
 - More technical indicators  
 - Deep learning models  
-- Mobile/web app deployment  
+- Mobile/web app deployment 
 
----
+--
 
 ## 📌 Conclusion
 This project demonstrates how Machine Learning can be used to analyze financial markets and classify risk levels, helping investors make smarter decisions.
