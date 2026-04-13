@@ -8,7 +8,7 @@
 The **Volatility Regime Swing** project is a Machine Learning-based system designed to analyze stock market behavior and classify market conditions into:
 
 - 🟢 Low Volatility (Stable Market)
-- 🔴 High Volatility (Risky Market)
+- 🔴 High Volatility (Risky Market) 
 
 Stock markets are highly dynamic and unpredictable. This project uses historical data and statistical indicators to provide **data-driven risk classification**.
 
